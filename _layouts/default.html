@@ -3,26 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - Woodlands International Fencing Club</title>
+    <title>{{ page.title }} HSJournal</title>
     <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicon.png">
     <style>
+        /* Dropdown Button */
+        .dropbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px;
+        padding-right: 70px;
+        font-size: 16px;
+        text-align: center;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {display: block;}
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        } 
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #09550c;
             margin: 0;
             padding: 0;
-            background-color: #FFFAF0;
+            background-color: #87e472;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            border-radius: 40px;
         }
         header {
-            background-color: #8B2323;
-            color: #FFD700;
+            background-color: #156b22;
             padding: 1rem 0;
+            border-width: 10px;
+            border-style: solid;
+            border-color: rgb(16, 168, 46);
         }
         .header-content {
             display: flex;
@@ -43,56 +89,27 @@
             margin: 0;
             font-size: 2em;
             max-width: 60%;
-        }
-        nav {
-            background-color: #FFD700;
-            padding: 10px 0;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-around;
-        }
-        nav a {
-            color: #8B2323;
-            text-decoration: none;
-            padding: 5px 10px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            background-color: #8B2323;
-            color: #FFD700;
-        }
-        main {
-            padding: 20px 0;
+            white-space: nowrap;
         }
         .content {
-            background-color: white;
+            background-color: rgb(53, 47, 47);
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-left: 3px solid #228B22;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+            border-left: 3px solid #fefefe;
         }
-        h1, h2, h3 {
-            color: #8B2323;
+        h1, h2, h3, footer {
+            color: #efe9e9;
         }
         footer {
             text-align: center;
             padding: 10px 0;
-            background-color: #8B2323;
-            color: #FFD700;
+            background-color: #156b22;
         }
         a {
-            color: #8B2323;
+            color: #000000;
         }
-        .menu-toggle {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: #8B2323;
-        }
+        
 
         @media screen and (max-width: 768px) {
             .container {
@@ -108,56 +125,40 @@
             .menu-toggle {
                 display: block;
             }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-            }
-            nav ul.show {
-                display: flex;
-            }
-            nav li {
-                margin: 5px 0;
-            }
             .content {
                 padding: 15px;
             }
         }
     </style>
 </head>
+     
 <body>
     <header>
         <div class="container header-content">
             <div class="logo-container">
-                <img src="/assets/logo.png" alt="Woodlands International Fencing Club Logo" onerror="this.onerror=null;this.src='/assets/logo.png';">
-                <h1>Woodlands International Fencing Club</h1>
+                <img src="/Journal/assets/us.jpg" alt="Logo" onerror="this.onerror=null;this.src='/assets/us.jpg';" style="border-radius: 40px;">
+                <h1>Henry Seefeldt: Student, Fencer, Developer</h1>
             </div>
         </div>
     </header>
-    <nav>
-        <div class="container">
-            <div class="menu-toggle">☰</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="group-workouts.html">Group Workouts</a></li>
-                <li><a href="individual-workouts.html">Individual Workouts</a></li>
-                <li><a href="mental-training.html">Mental Training</a></li>
-                <li><a href="diet.html">Nutrition</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="boxing-timer.html">BoxingTimer App</a></li>
-            </ul>
-        </div>
-    </nav>
-    <main>
+        <main>
         <div class="container">
             <div class="content">
+                <div class="dropdown">
+                <button class="dropbtn">Projects</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
                 {{ content }}
             </div>
         </div>
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2024 Woodlands International Fencing Club. All rights reserved.</p>
+            <p>Contact me at wonderpig69@protonmail.com or 936-494-5181</p>
         </div>
     </footer>
     <script>
@@ -167,3 +168,4 @@
     </script>
 </body>
 </html>
+
